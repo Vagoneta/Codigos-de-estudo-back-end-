@@ -1,0 +1,42 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js localhost 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.6.4",
+    "nodemon": "^2.0.20"
+  }
+}
+
+
+//config inicial 
+const express = required ('express')
+const app = express()
+
+//forma de ler JSON
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+)
+
+app.use(express.json())
+
+//rota inicial / end point
+app.get('/', (req, res) =>{
+    //mostrar requisiçaõ
+
+    res.json({message: "Oi Express!"})
+})
+
+//entregar porta 
+app.listen(3000)
